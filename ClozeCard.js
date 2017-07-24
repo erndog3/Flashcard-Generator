@@ -7,9 +7,12 @@ function CloseCard(text, cloze){
 		console.log('Error', cloze);
 		return;
 	}
+	else if (this instanceof CloseCard){
 	this.full = text;
 	this.close = cloze;
-	this.partial = text.replace(cloze, '...');
+	this.partial = text.replace(cloze, '...')
+	}else {
+		return new ClozeCard(text, cloze);
 
 }
 
